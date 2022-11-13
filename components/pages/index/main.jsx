@@ -21,7 +21,7 @@ export default function Main() {
               <div className="w-[18rem] text-justify ">
                 <p className="" >
                   Lorem Ipsum is simply dummy text of the printing and
-                  typesetting industry. Lorem Ipsum has been the industry's
+                  typesetting industry. Lorem Ipsum has been the industry`&apos;`s
                   standard dummy text ever since the 1500s, when an unknown
                   printer took a galley of type and scrambled it to make a type
                   specimen book.
@@ -30,7 +30,7 @@ export default function Main() {
               <div className="w-[18rem]  text-justify ">
                 <p>
                   Lorem Ipsum is simply dummy text of the printing and
-                  typesetting industry. Lorem Ipsum has been the industry's
+                  typesetting industry. Lorem Ipsum has been the industry`&apos;`s
                   standard dummy text ever since the 1500s.
                 </p>
               </div>

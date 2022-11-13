@@ -8,7 +8,7 @@ import Card from "../components/Atoms/card";
 import Button from "../components/Atoms/button";
 import { API } from "../config/api";
 
-export default function fund() {
+export default function Fund() {
   const router = useRouter();
 
   const [data, setData] = useState([]);
@@ -39,9 +39,9 @@ export default function fund() {
           </div>
         </div>
         <div className="grid md:grid-cols-3 ml-[12rem]  gap-12 pt-[2rem] pb-[2rem]">
-          {data?.map((item, index) => (
-            <div className=" w-[20rem] h-[33.7rem] ">
-              <Card key={index}>
+          {data?.map((item) => (
+            <div key={item.id} className=" w-[20rem] h-[33.7rem] ">
+              <Card >
                 <div>
                   <img
                     src={item.image}
