@@ -25,7 +25,7 @@ export default function Footer({ indexx }) {
     <>
       <div className="mb-8 ml-8">
         <p className="  font-extrabold text-3xl font-font_a mb-5">
-          Donation has not been approved ({dataT.length})
+        donation in payment ({dataT.length})
         </p>
         <div className="overflow-y-auto scrollbar-hide h-[20rem]">
           {dataT?.map((item, index) => (
