@@ -27,7 +27,7 @@ export default function Footer({setShowMLogin}) {
     }
 
     getData()
-  },[])
+  },[data])
 
   return (
     <>
