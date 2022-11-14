@@ -14,16 +14,17 @@ export default function Footer({setShowMLogin}) {
   const router = useRouter();
   const [data,setData]=useState([])
 
-const getData =async(e)=>{
-  try {
-    const res =await API.get("/funds")
-    setData(res.data.data)
-  } catch (error) {
-    console.log(error);
-  }
-}
+
 
   useEffect(()=>{
+    const getData =async(e)=>{
+      try {
+        const res =await API.get("/funds")
+        setData(res.data.data)
+      } catch (error) {
+        console.log(error);
+      }
+    }
 
     getData()
   },[])
