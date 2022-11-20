@@ -33,7 +33,7 @@ export default function Fund() {
         <div className="mt-[5rem] mx-[4rem] flex justify-between">
           <p className="ml-[7rem] font-bold text-4xl">My Raise </p>
           <div onClick={() => router.push(`form_fund`)}>
-            <Button style="bg-primary hover:bg-pthird  hover:text-primary  w-[12rem] ">
+            <Button style="hover:bg-primary mb-4 hover:text-psecond active:bg-psecond/90 active:text-primary/90 text-psecond  w-[12rem] bg-primary  ">
               <p>Make Raise Fund</p>
             </Button>
           </div>
@@ -50,14 +50,14 @@ export default function Fund() {
                   />
                 </div>
                 <div className="m-4">
-                  <p className="font-bold text-2xl w-[19rem]">{item.name}</p>
-                  <p className=" w-[18rem] my-4">
+                  <p className="font-bold h-[4rem] overflow-hidden text-2xl w-[19rem]">{item.name}</p>
+                  <p className=" w-[18rem] h-[3rem] overflow-hidden my-4">
                     {item.desc.substring(0, 73)}...
                   </p>
                   <div className="font-bold flex justify-between mt-8 ">
                     <p className=" ">{Rupiah.convert(item?.donated)}</p>
                     <Button
-                      onClick={() => router.push(`/fund/${item.id}`)}
+                      onClick={() => router.push(`/my_fund/${item.id}`)}
                       style="hover:bg-primary mb-4 hover:text-psecond active:bg-psecond/90 active:text-primary/90 text-psecond h-8 w-[6.5rem] bg-primary hover:bg-psecond/90"
                     >
                       <p className="">View Fund</p>

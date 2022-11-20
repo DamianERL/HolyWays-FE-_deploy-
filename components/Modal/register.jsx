@@ -10,7 +10,7 @@ import Button from "../Atoms/button";
 //import
 import { useState } from "react";
 
-export default function Register() {
+export default function Register({setShowModal,setShowMLogin}) {
   const [input, setInput] = useState({
     role:"user"
   });
@@ -29,6 +29,8 @@ export default function Register() {
 
       await API.post("/register", body);
 
+      setShowModal(true)
+      setShowMLogin(false)
       swal("Register Success");
     } catch (error) {
       console.log(error);

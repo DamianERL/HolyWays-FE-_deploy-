@@ -1,4 +1,3 @@
-
 //component
 import Layout from "../components/utils/layout";
 import Header from "../components/pages/index/header";
@@ -8,11 +7,8 @@ import Footer from "../components/pages/index/footer";
 import { useState } from "react";
 
 export default function Home() {
-
-  
-
   const [showMLogin, setShowMLogin] = useState(false);
-  
+
   return (
     <div>
       <Layout title="HolyWays">

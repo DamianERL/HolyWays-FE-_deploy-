@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useRouter } from "next/router";
 import { useMutation } from "react-query";
 import swal from "sweetalert";
+import Rupiah from "rupiah-format";
 //component
 import Navbar from "../components/Navbar/navbar";
 import Layout from "../components/utils/layout";
@@ -12,6 +13,9 @@ export default function Form_fund() {
   const router = useRouter();
   const [preview, setPreview] = useState(null);
   const [input, setInput] = useState("");
+
+  console.log("thist trigrer",preview);
+  console.log("data create",input);
 
   const handleChange = (e) => {
     setInput({
@@ -27,6 +31,7 @@ export default function Form_fund() {
   const handleSubmit = useMutation(async (e) => {
     e.preventDefault();
     try {
+      
       const formData = new FormData();
       formData.set("name", input.name);
       formData.set("desc", input.desc);
@@ -35,7 +40,7 @@ export default function Form_fund() {
       if (preview) {
         formData.set("image", input?.image, input?.image?.name);
       }
-
+      console.log("set image",formData);
       const res = await API.post("/fund", formData);
       swal("success Raise Fund ");
     } catch (error) {
@@ -79,8 +84,9 @@ export default function Form_fund() {
           <textarea
             onChange={handleChange}
             name="desc"
+            maxlength="844"
             placeholder="description"
-            className="resize-none px-4 py-2 bg-gray-400/40 rounded focus:outline-none focus:ring focus:ring-violet-300 w-full h-[10rem] "
+            className="resize-none px-4 py-2 bg-gray-400/40 rounded focus:outline-none focus:ring  focus:ring-violet-300 w-full h-[10rem] "
           ></textarea>
           <div className="flex justify-end mt-4">
             <Button style="hover:bg-primary   hover:text-psecond active:bg-psecond/90 active:text-primary/90 text-psecond h-8 w-[7.5rem] bg-primary hover:bg-psecond/90">

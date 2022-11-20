@@ -5,6 +5,7 @@ import Login from "../Modal/login";
 import Register from "../Modal/register";
 
 export default function Modalauth({ setShowMLogin, showMLogin }) {
+    // const [showMLogin, setShowMLogin] = useState(false);
   const [showModal, setShowModal] = useState(false);
 
   // switch modal
@@ -38,7 +39,7 @@ export default function Modalauth({ setShowMLogin, showMLogin }) {
         <p>Register </p>
       </Button>
       <Modal isVisible={showMLogin} onClose={() => setShowMLogin(false)}>
-        <Register />
+        <Register setShowModal={setShowModal} setShowMLogin={setShowMLogin} />
         <p className=" text-base text-center mb-8">
           Don`t have an account? click
           <strong onClick={handleCloseRegis}> HERE</strong>

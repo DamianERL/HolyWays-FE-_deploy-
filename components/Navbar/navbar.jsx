@@ -10,7 +10,7 @@ export default function Navbar({ setShowMLogin, showMLogin }) {
   const isLogin = state.isLogin;
   return (
     <>
-      <nav className="h-[4.5rem] pt-2  bg-primary sticky top-0 ">
+      <nav className="h-[4.5rem] pt-2   bg-primary sticky top-0 ">
         <div className="flex justify-between px-10 items-center ">
           <div className="pt-2">
             <Link href="/">

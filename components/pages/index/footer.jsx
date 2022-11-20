@@ -27,7 +27,7 @@ export default function Footer({setShowMLogin}) {
     }
 
     getData()
-  },[data])
+  },[])
 
   return (
     <>
@@ -38,16 +38,18 @@ export default function Footer({setShowMLogin}) {
         <p className=" font-bold text-3xl text-center text-primary">
           Donate Now
         </p>
-        <div className="flex  justify-center items-center gap-4 pt-[2rem] pb-[2rem]">
+        {/* <div className="flex" > */}
+
+        <div className="grid md:grid-cols-4 my-[4rem] mx-[5rem] gap-[1rem] ">
             
           {data?.map((item, index) => (
             <Card key={index}>
-              <div className="w-[20rem] h-[33.7rem]">
+              <div className="">
                 <div className="">
                   <img
                     src={item.image}
                     alt=""
-                    className="w-[20rem]  rounded-t-md  h-[20rem]"
+                    className="w-[30rem]  rounded-t-xl  h-[20rem]"
                   />
                 </div>
                 <div className="m-4">
@@ -73,7 +75,8 @@ export default function Footer({setShowMLogin}) {
               </div>
             </Card>
           ))}
-          </div>
+          {/* </div> */}
+        </div>
       </div>
     </>
   );

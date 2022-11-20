@@ -8,20 +8,22 @@ export default function Profil() {
   const [state,dispatch] = useContext(UserContext);
   const [modalProfil, setModalProfil] = useState(false);
   const [profils,setProfils] =useState("") 
-  
+  // console.log(profils);
 
-  useEffect(()=>{
-    const getData =async (e)=>{
-      try {
-        const res = await API.get("/get-user")
-        setProfils(res.data.data)
-      } catch (error) {
-        console.log(error);
+  const getData =async (e)=>{
+    try {
+      const res = await API.get("/get-user")
+      setProfils(res.data.data)
+    } catch (error) {
+      console.log(error);
 
-      }
     }
+  }
+
+  useEffect(() => {
     getData()
   },[])
+
 
   const hadleLogout = () => {
     dispatch({
@@ -34,7 +36,7 @@ export default function Profil() {
        onClick={() => {
         setModalProfil(true);
       }}
-        className="w-14 h-14 cursor-pointer  rounded-full"
+        className="w-14 h-14 outline outline-2 outline-psecond cursor-pointer  rounded-full"
         src={profils.image}
         alt=""
       />
