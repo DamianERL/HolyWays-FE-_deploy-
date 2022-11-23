@@ -16,7 +16,6 @@ export default function Detail_fund() {
   const router = useRouter();
   const indexx = router.query.funds;
   const [data, setData] = useState([]);
-  console.log("maping this data now",data);
   const fundId =data
 
   const handleData = async (e) => {
@@ -32,7 +31,6 @@ export default function Detail_fund() {
   }, []);
 
   const [Tsuccess,setTransaction]= useState([])
-  // console.log("check",Tsuccess);
   const getData=async()=>{
     try {
       const res = await API.get(`/transactionss/${indexx}`)
@@ -92,6 +90,7 @@ export default function Detail_fund() {
                 {data.desc}
               </p>
               <Button
+              onClick={()=> router.push(`/edit-fund/${data.id}`)}
                 style="hover:bg-primary mb-4 hover:text-psecond active:bg-psecond/90 active:text-primary/90 text-psecond h-8 mt-8 bg-primary hover:bg-psecond/90"
               >
                 EDIT FUND

@@ -6,7 +6,6 @@ import rupiah from "rupiah-format";
 import { API } from '../../../config/api';
 export default function Main({indexx,}) {
   const [Tsuccess,setTransaction]= useState([])
-  // console.log("check",Tsuccess);
   const getData=async()=>{
     try {
       const res = await API.get(`/transactionss/${indexx}`)

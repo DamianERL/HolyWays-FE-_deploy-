@@ -18,7 +18,6 @@ export default function Fund() {
 
         const res =await API.get("/fundss")
         setData(res.data.data)
-        // setData(res.data.data)
       } catch (error) {
         console.log(error);
       }

@@ -17,10 +17,8 @@ export default function Profil() {
 
   //
   const [preview, setPreview] = useState(null);
-  console.log("data", preview);
   const [profile, setProfile] = useState("");
 
-  console.log("pres1", profile);
 
 
 
@@ -37,7 +35,6 @@ export default function Profil() {
       await API.patch("/user", formData);
       getData();
       swal("success");
-      console.log("check", res);
     } catch (error) {
       console.log(error);
     }
@@ -54,7 +51,6 @@ export default function Profil() {
 
     setChange(true)
 
-    console.log(change);
 
     if (e.target.type === "file") {
       setPreview(e.target.files[0].name);
@@ -75,7 +71,6 @@ export default function Profil() {
   const getData = async (e) => {
     try {
       const res = await API.get("/get-user");
-      // console.log(res);
       setProfils({
         name: res.data.data.name,
         email: res.data.data.email,
@@ -96,7 +91,6 @@ export default function Profil() {
       try {
         const res = await API.get("/transactions");
         setTransaction(res.data.data);
-        // console.log("oke",res);
       } catch (error) {
         console.log(error);
       }

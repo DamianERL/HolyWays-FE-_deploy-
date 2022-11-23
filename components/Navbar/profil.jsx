@@ -8,7 +8,6 @@ export default function Profil() {
   const [state,dispatch] = useContext(UserContext);
   const [modalProfil, setModalProfil] = useState(false);
   const [profils,setProfils] =useState("") 
-  // console.log(profils);
 
   const getData =async (e)=>{
     try {
